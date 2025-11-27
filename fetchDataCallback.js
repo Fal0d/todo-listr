@@ -20,7 +20,6 @@ function fetchDataWithCallback(callback) {
      }, 2000);
    }
    
-   // Example usage:
    
    fetchDataWithCallback(function (result) {
      console.log(result);
