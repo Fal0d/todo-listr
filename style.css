@@ -1,0 +1,38 @@
+ body {
+            font-family: Arial, sans-serif;
+          }
+          h1 {
+            text-align: center;
+          }
+          ul.todo-list {
+            list-style: none; /* remove default bullets */
+            padding: 0;
+            max-width: 400px;
+            margin: auto;
+          }
+          ul.todo-list li {
+            position: relative;
+            padding: 10px 40px 10px 10px; /* room for the tick icon on the right */
+            margin: 5px 0;
+            background-color: #eee; /* default color = light gray */
+            color: #333;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+          }
+          ul.todo-list li.completed {
+            background-color: #c8e6c9; /* greenish background when completed */
+            color: #2e7d32; /* darker green text */
+          }
+          ul.todo-list li .tick {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #2e7d32;
+            visibility: hidden; /* hidden by default */
+          }
+          ul.todo-list li.completed .tick {
+            visibility: visible;
+          }
