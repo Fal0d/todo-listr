@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>To Do</title>
+</head>
+<body>
+     <style>
+          body {
+            font-family: Arial, sans-serif;
+          }
+          h1 {
+            text-align: center;
+          }
+          ul.todo-list {
+            list-style: none; /* remove default bullets */
+            padding: 0;
+            max-width: 400px;
+            margin: auto;
+          }
+          ul.todo-list li {
+            position: relative;
+            padding: 10px 40px 10px 10px; /* room for the tick icon on the right */
+            margin: 5px 0;
+            background-color: #eee; /* default color = light gray */
+            color: #333;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+          }
+          ul.todo-list li.completed {
+            background-color: #c8e6c9; /* greenish background when completed */
+            color: #2e7d32; /* darker green text */
+          }
+          ul.todo-list li .tick {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #2e7d32;
+            visibility: hidden; /* hidden by default */
+          }
+          ul.todo-list li.completed .tick {
+            visibility: visible;
+          }
+        </style>
+      </head>
+      <body>
+      
+        <h1>Interactive To Do List</h1>
+      
+        <ul class="todo-list">
+          <li>Complete Module 1 <span class="tick">&#10003;</span></li>
+          <li>Complete Module 2  <span class="tick">&#10003;</span></li>
+          <li>Complete Module 3  <span class="tick">&#10003;</span></li>
+          <li>Submit Assignments <span class="tick">&#10003;</span></li>
+        </ul>
+      
+        <script>
+          // All listed items
+          const items = document.querySelectorAll('.todo-list li');
+      
+          items.forEach(item => {
+            item.addEventListener('click', () => {
+              // On click toggle
+              item.classList.toggle('completed');
+            });
+          });
+        </script>
+      
+</body>
+</html>
