@@ -1,0 +1,76 @@
+Callback Assignment – fetchDataWithCallback
+📌 Overview
+
+This assignment demonstrates how asynchronous JavaScript works using callbacks and setTimeout.
+You will create a function that simulates fetching data, handles potential errors, and uses a callback to return results.
+
+🎯 Learning Objectives
+
+Understand how callbacks work
+
+Simulate asynchronous operations using setTimeout
+
+Implement basic error handling with try/catch
+
+Log success and error messages to the console
+
+🧩 Part 1: Create fetchDataWithCallback
+
+The function must:
+
+Accept a callback function
+
+Wait 2 seconds using setTimeout
+
+Call the callback with "Data fetched"
+
+Log the output using console.log()
+
+🧩 Part 2: Add Error Handling
+
+Inside the setTimeout:
+
+Simulate an error using a condition like let error = true
+
+Wrap logic in try/catch
+
+If an error occurs, log:
+
+Error: Fetch failed
+
+
+Otherwise, call the callback and print:
+
+Data fetched
+
+🧪 Example Code
+function fetchDataWithCallback(callback) {
+  setTimeout(function () {
+    try {
+      let error = false; // Change to true to test error handling
+
+      if (error) {
+        throw new Error("Fetch failed");
+      }
+
+      callback("Data fetched");
+
+    } catch (err) {
+      console.error("Error: " + err.message);
+    }
+  }, 2000);
+}
+
+fetchDataWithCallback(function (message) {
+  console.log(message);
+});
+
+📤 How to Run
+
+Open your JavaScript file in a browser console or Node.js
+
+Run the script
+
+Observe output in the console
+
+Toggle error between true and false to test both cases
